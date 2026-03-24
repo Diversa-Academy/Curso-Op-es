@@ -83,7 +83,7 @@
             background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(249, 115, 22, 0.3);
-            display: none; /* Aparecer via JS ou CSS scroll */
+            display: none;
         }
     </style>
 </head>
@@ -326,16 +326,6 @@
             <a href="https://pay.hotmart.com/A99534715D" class="w-full cta-button shimmer text-white font-black text-xl md:text-2xl py-5 md:py-6 rounded-xl md:rounded-2xl inline-block mb-8 transition-transform active:scale-95 uppercase">
                 GARANTIR MEU ACESSO
             </a>
-
-            <div class="flex flex-col items-center gap-4">
-                <div class="flex gap-4 md:gap-6 opacity-50 grayscale">
-                    <img src="https://logopng.com.br/logos/pci-dss-153.png" class="h-4 md:h-6">
-                    <img src="https://logodownload.org/wp-content/uploads/2014/10/hotmart-logo.png" class="h-4 md:h-6">
-                </div>
-                <p class="text-slate-500 text-[10px] md:text-xs font-bold flex items-center gap-2">
-                    🛡️ Garantia de 7 dias ou seu dinheiro de volta.
-                </p>
-            </div>
         </div>
     </section>
 
@@ -348,7 +338,6 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Timer de 10 minutos
         function startTimer(duration, display, displayFloat) {
             var timer = duration, minutes, seconds;
             setInterval(function () {
@@ -364,7 +353,6 @@
             }, 1000);
         }
 
-        // Lógica da Barra Flutuante no Scroll
         window.onscroll = function() {
             var bar = document.getElementById("floating-bar");
             if (window.pageYOffset > 400) {
