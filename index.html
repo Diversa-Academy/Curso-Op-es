@@ -10,6 +10,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         
@@ -83,6 +86,24 @@
         .module-card.active .arrow-icon {
             transform: rotate(180deg);
         }
+
+        /* FAQ Estilos */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+        }
+        .faq-item.active .faq-content {
+            max-height: 300px;
+            padding-top: 1rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Swiper Custom Styles */
+        .swiper-pagination-bullet { background: rgba(255,255,255,0.2); opacity: 1; }
+        .swiper-pagination-bullet-active { background: var(--primary-blue); }
 
         .sticky-timer {
             position: fixed;
@@ -298,12 +319,12 @@
                 <p class="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto px-4">Não somos teóricos de YouTube. Somos profissionais que gerenciam centenas de milhões de reais no maior banco de investimentos da América Latina.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 border-b border-white/5 pb-20">
                 <div class="glass-card rounded-[30px] md:rounded-[40px] p-2 overflow-hidden" data-aos="fade-up">
                     <img src="https://z-cdn-media.chatglm.cn/files/d0764800-e0d6-494d-abda-1e84f22227db.png?auth_key=1870226473-0e78fa09ff744e2b80790fee41aa4b60-0-50051d06c3cf6cdf0c001c47ed646800" class="w-full rounded-[28px] md:rounded-[38px] mb-6 md:mb-8">
                     <div class="px-6 md:px-8 pb-8 md:pb-10">
                         <h3 class="text-2xl md:text-4xl font-black mb-1 md:mb-2 text-white">Leonardo Outi</h3>
-                        <p class="text-blue-400 text-base md:text-xl font-bold mb-4 md:mb-6">Head de Renda Variável @ BTG Pactual</p>
+                        <p class="text-blue-400 text-base md:text-xl font-bold mb-4 md:mb-6">Head de Renda Variável na Diversa Investimentos</p>
                         <p class="text-slate-300 text-sm md:text-lg leading-relaxed mb-4">Com mais de uma década de experiência no mercado financeiro brasileiro, Leonardo passou por XP, Terra e Órama.</p>
                         <p class="text-slate-400 text-xs md:text-sm leading-relaxed">Especialista em leitura de fluxo, ele traduz a complexidade do mercado em uma metodologia simples.</p>
                     </div>
@@ -313,10 +334,79 @@
                     <img src="https://z-cdn-media.chatglm.cn/files/994d0756-1ecf-428a-b784-812d6b20ce5f.png?auth_key=1870227084-3c79f8a791004685af88be8a6e341aea-0-08d0a730e3277cf0152df80b1211b121" class="w-full rounded-[28px] md:rounded-[38px] mb-6 md:mb-8">
                     <div class="px-6 md:px-8 pb-8 md:pb-10">
                         <h3 class="text-2xl md:text-4xl font-black mb-1 md:mb-2 text-white">João Pedro Granzotti</h3>
-                        <p class="text-blue-400 text-base md:text-xl font-bold mb-4 md:mb-6">Head de Opções @ Diversa Invest</p>
+                        <p class="text-blue-400 text-base md:text-xl font-bold mb-4 md:mb-6">Head de Opções na Diversa Investimentos</p>
                         <p class="text-slate-300 text-sm md:text-lg leading-relaxed mb-4">Reconhecido como um dos maiores especialistas em derivativos, João Pedro gerencia mais de <strong>R$ 300 milhões</strong>.</p>
                         <p class="text-slate-400 text-xs md:text-sm leading-relaxed">Sua expertise une análise técnica avançada com modelos matemáticos de risco de alta probabilidade.</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="mt-20 overflow-hidden" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-4xl font-black mb-4">Aprovado por quem <span class="accent-color">coloca em prática</span></h2>
+                    <p class="text-slate-400">Resultados reais de alunos reais no Telegram e WhatsApp</p>
+                </div>
+                
+                <div class="swiper-container testimonial-carousel pb-12">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide glass-card p-8 rounded-3xl h-auto flex flex-col justify-between">
+                            <p class="text-base text-slate-300 leading-relaxed italic mb-8">"Didática sensacional. Consegui montar minha primeira operação estruturada com travas na Petrobras e o lucro já pagou o curso."</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <img src="https://drive.google.com/thumbnail?id=1QFhHEEKQBE5m__EFN7TQ5s_VqPfsGVRm&sz=w100" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-bold text-base text-white">Marcos S.</p>
+                                    <p class="text-xs text-slate-500 italic">Investidor Pessoa Física</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide glass-card p-8 rounded-3xl h-auto border-blue-500/30 flex flex-col justify-between">
+                            <p class="text-base text-slate-300 leading-relaxed italic mb-8">"O módulo de Hedge salvou minha carteira na última queda do IBOV. Enquanto todo mundo desesperado, eu estava tranquila com meu seguro."</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xl text-white">A</div>
+                                <div>
+                                    <p class="font-bold text-base text-white">Amanda Torres</p>
+                                    <p class="text-xs text-slate-500 italic">Autônoma</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide glass-card p-8 rounded-3xl h-auto flex flex-col justify-between">
+                            <p class="text-base text-slate-300 leading-relaxed italic mb-8">"Eu tinha muito medo de opções, achava que era cassino. O curso me mostrou o lado profissional e matemático do risco controlado."</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <img src="https://drive.google.com/thumbnail?id=1s9od5HhLP09VSKfVvnHBJeV11q5hI1_y&sz=w100" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-bold text-base text-white">Roberto F.</p>
+                                    <p class="text-xs text-slate-500 italic">Engenheiro</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide glass-card p-8 rounded-3xl h-auto flex flex-col justify-between hover:border-blue-500/30 transition-all">
+                            <p class="text-base text-slate-300 leading-relaxed italic mb-8">"Fiz minha primeira venda coberta de CALL hoje. Recebi o prêmio na conta. É incrível como as opções geram renda recorrente."</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <img src="https://drive.google.com/thumbnail?id=1XwIZvhGpMsOcSsiglADM9EFrikAL3Uzn&sz=w100" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-bold text-base text-white">Lucas Mendes</p>
+                                    <p class="text-xs text-slate-500 italic">Empresário</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide glass-card p-8 rounded-3xl h-auto flex flex-col justify-between border-blue-500/30">
+                            <p class="text-base text-slate-300 leading-relaxed italic mb-8">"O suporte deles no grupo de alunos é o diferencial. João Pedro responde as dúvidas com exemplos práticos do mercado real."</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <img src="https://drive.google.com/thumbnail?id=1JPOb5Qa37WQMp2iVUYKQyZ4jQIgh6WJe&sz=w100" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-bold text-base text-white">Fernanda R.</p>
+                                    <p class="text-xs text-slate-500 italic">Investidora</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination mt-10"></div>
                 </div>
             </div>
         </div>
@@ -355,14 +445,86 @@
         </div>
     </section>
 
+    <section class="py-20 px-4 bg-[#0b1120]">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black mb-12 text-center italic uppercase">Perguntas <span class="accent-color">Frequentes</span></h2>
+            
+            <div class="space-y-4">
+                <div class="faq-item glass-card p-6 rounded-xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-sm md:text-lg">Preciso já saber algo sobre o mercado?</h4>
+                        <span class="faq-icon text-2xl text-blue-500 transition-transform">+</span>
+                    </div>
+                    <div class="faq-content text-slate-400 text-sm md:text-base leading-relaxed">
+                        Não. O curso foi estruturado do zero absoluto até as estratégias avançadas. O primeiro módulo foca justamente em nivelar o conhecimento para que você entenda os conceitos fundamentais antes de operar.
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card p-6 rounded-xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-sm md:text-lg">Preciso já ter ações em carteira?</h4>
+                        <span class="faq-icon text-2xl text-blue-500 transition-transform">+</span>
+                    </div>
+                    <div class="faq-content text-slate-400 text-sm md:text-base leading-relaxed">
+                        Não é obrigatório. Você aprenderá estratégias para quem já tem ações (Venda Coberta) e estratégias para quem quer entrar no mercado ou apenas operar volatilidade sem precisar comprar o ativo principal.
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card p-6 rounded-xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-sm md:text-lg">Qual corretora devo usar?</h4>
+                        <span class="faq-icon text-2xl text-blue-500 transition-transform">+</span>
+                    </div>
+                    <div class="faq-content text-slate-400 text-sm md:text-base leading-relaxed">
+                        As estratégias funcionam em qualquer corretora que dê acesso ao mercado de opções. Recomendamos corretoras com boa estabilidade e taxas competitivas (como BTG Pactual, XP ou Rico), mas ensinamos você a operar independente da plataforma.
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card p-6 rounded-xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-sm md:text-lg">Quanto de capital é necessário para começar?</h4>
+                        <span class="faq-icon text-2xl text-blue-500 transition-transform">+</span>
+                    </div>
+                    <div class="faq-content text-slate-400 text-sm md:text-base leading-relaxed">
+                        As opções são muito acessíveis. É possível começar a montar estruturas pequenas com valores a partir de R$ 200,00 ou R$ 500,00 para ir testando o conhecimento e ganhando confiança antes de aumentar a mão.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="py-12 border-t border-white/5 text-center text-slate-600 text-xs md:text-sm">
         <p>&copy; 2026 Diversa Academy - Todos os direitos reservados.</p>
         <p class="mt-4 px-4 max-w-2xl mx-auto leading-relaxed">Aviso legal: Investimentos em opções envolvem riscos de perda. Resultados passados não garantem lucros futuros. Opere com responsabilidade.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script>
         AOS.init({ duration: 1000, once: true });
+
+        // Inicialização do Carrossel de Depoimentos
+        var testimonialSwiper = new Swiper('.testimonial-carousel', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                // Quando a largura da janela é >= 768px (desktop)
+                768: {
+                    slidesPerView: 3,
+                }
+            }
+        });
 
         function startTimer(duration, display, displayFloat) {
             var timer = duration, minutes, seconds;
